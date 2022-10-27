@@ -1,0 +1,21 @@
+{
+    "name": "phaser_base",
+    "version": "0.1.0",
+    "description": "Phaser on Docker",
+    "contributors": [
+      {
+        "name" : "Daniel Espinosa",
+        "email" : "ec.dani@gmail.com"
+      }
+    ],
+    "license": "UNLICENSED",
+    "private": true,
+    "main": "server.js",
+    "scripts": {
+      "start": "node src/server.js"
+    },
+    "dependencies": {
+      "express": "^4.16.1",
+      "phaser": "^3.55.2"
+    }
+  }
