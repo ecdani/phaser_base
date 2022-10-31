@@ -4,6 +4,7 @@ services:
   node:
     image: node:lts-alpine
     container_name: phaser2_node
+    user: node
     working_dir: /app
     volumes:
       - type: bind
