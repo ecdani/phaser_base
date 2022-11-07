@@ -3,13 +3,16 @@ version: '3.4'
 services:
   node:
     image: node:lts-alpine
-    container_name: phaser2_node
+    container_name: node
     user: node
     working_dir: /app
     volumes:
       - type: bind
         source: .
         target: /app
+    environment:
+      NODE_ENV: development
     ports:
       - 3000:3000
+      - 9229:9229
     command: "npm run dev"
