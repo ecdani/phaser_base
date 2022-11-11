@@ -1,0 +1,42 @@
+site_name: Phaser base doc
+dev_addr: '127.0.0.1:8000'
+site_url: https://github.com/ecdani/phaser_base
+site_dir: docs/build
+
+repo_name: phaser_base
+repo_url: https://github.com/ecdani/phaser_base
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+nav:
+  - Home: index.md
+  - Debugging: debugging.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      title: On this page
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

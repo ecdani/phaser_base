@@ -37,3 +37,9 @@ Using a console, in the root of your local copy of the repository run:
 docker compose stop
 ```
 
+# Next steps
+
+This base comes with an self-contained documentation repository (mkdocs), where you can check the documentation.
+
+Simply visit http://localhost:8000/ to see all the documentation.
+

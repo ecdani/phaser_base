@@ -16,3 +16,12 @@ services:
       - 3000:3000
       - 9229:9229
     command: "npm run dev"
+  mkdocs:
+    image: squidfunk/mkdocs-material:latest
+    container_name: mkdocs
+    ports:
+      - 8000:8000
+    volumes:
+      - type: bind
+        source: .
+        target: /docs
