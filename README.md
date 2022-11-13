@@ -25,7 +25,7 @@ docker compose run node npm install
 # How to run it
 
 Using a console, in the root of your local copy of the repository run:
-```
+```bash
 docker compose up -d 
 ```
 You can visit http://localhost:3000/ to check that it's working.
@@ -33,7 +33,7 @@ You can visit http://localhost:3000/ to check that it's working.
 # How to stop it
 
 Using a console, in the root of your local copy of the repository run:
-```
+```bash
 docker compose stop
 ```
 
@@ -42,4 +42,5 @@ docker compose stop
 This base comes with an self-contained documentation repository (mkdocs), where you can check the documentation.
 
 Simply visit http://localhost:8000/ to see all the documentation.
-
+> ### Disclaimer
+> Ports may vary. Please check it with: `docker compose ps`

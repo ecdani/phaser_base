@@ -3,8 +3,8 @@ name: phaser_base
 
 services:
   node:
-    image: node:lts-alpine
-    container_name: node-${COMPOSE_PROJECT_NAME}
+    image: node:18-alpine
+    container_name: ${COMPOSE_PROJECT_NAME}-node
     user: node
     working_dir: /app
     volumes:
@@ -13,18 +13,15 @@ services:
         target: /app
     environment:
       NODE_ENV: development
-      COMPOSE_PROJECT_NAME:
     ports:
       - 3000:3000
       - 9229:9229
     command: "npm run dev"
   mkdocs:
     image: squidfunk/mkdocs-material:latest
-    environment:
-      - COMPOSE_PROJECT_NAME
-    container_name: mkdocs-${COMPOSE_PROJECT_NAME}
+    container_name: ${COMPOSE_PROJECT_NAME}-mkdocs
     ports:
-      - 8000:8000
+      - 8000-8010:8000
     volumes:
       - type: bind
         source: .
