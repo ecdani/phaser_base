@@ -19,7 +19,7 @@ export default function Game () {
 
   useEffect(() => {
     const phaserGame = new Phaser.Game({
-      type: Phaser.AUTO,
+      type: Phaser.CANVAS,
       parent: "game-content",
       width: 800,
       height: 600,
