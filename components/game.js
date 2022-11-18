@@ -1,3 +1,4 @@
+'use client';
 import Phaser from "phaser"
 import React, { useEffect, useReducer  } from "react"
 import { ExampleScene } from "./exampleScene.js"

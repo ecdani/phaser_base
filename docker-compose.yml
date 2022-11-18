@@ -17,6 +17,15 @@ services:
       - 3000:3000
       - 9229:9229
     command: "npm run dev"
+  redis:
+    image: redis:7-alpine
+    container_name: ${COMPOSE_PROJECT_NAME}-redis
+    ports:
+      - 6379:6379
+    restart: unless-stopped
+    #volumes:
+    # - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    # - ./redis/redis-data:/data
   mkdocs:
     image: squidfunk/mkdocs-material:latest
     container_name: ${COMPOSE_PROJECT_NAME}-mkdocs

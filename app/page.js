@@ -1,10 +1,11 @@
-'use client';
 import styles from '../styles/Home.module.css'
 import Game from "../components/game.js";
+import RedisExample from "../components/redisExample";
 import Head from 'next/head'
 import Image from 'next/image'
 
-export default function Page() {
+export default async function Page() {
+  const data = await RedisExample.getServerSideData();
   return (
     <div className={styles.container}>
       <Head>
@@ -29,6 +30,7 @@ export default function Page() {
         </p>
 
         <Game />
+        <RedisExample data={data} />
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
