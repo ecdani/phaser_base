@@ -1,20 +1,17 @@
 import { createClient } from 'redis';
-import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 
 async function RedisExample (props) {
   const data = props.data;
   return (<>
-    <div className={`${styles.card} flex items-center`}>
-      <div className="flex-none mr-8">
-        <Image src="/redis-icon.svg" alt="Redis Logo" width={32} height={32} />
-      </div>
-      <div> 
-          <h2>Proofs of Redis working:</h2>
-          <p className="font-semibold text-slate-900"> Ping! <span className="font-medium">{data.ping}</span></p>
-          <p className="font-semibold text-slate-900"> Hi! <span className="font-medium">{data.test}</span></p>
-          <p className="font-semibold text-slate-900"> Counting visits:  <span className="font-medium">{data.visits}</span></p>
-        </div>
+    <div className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600" >
+      <h3 className="text-2xl font-bold">
+        <Image className="inline mr-3" src="/redis-icon.svg" alt="Redis Logo" width={32} height={32} />
+        Proofs of Redis working &rarr;
+      </h3>
+      <p className="mt-4 text-xl"> Ping! <span className="font-medium">{data.ping}</span></p>
+      <p className="mt-4 text-xl"> Hi! <span className="font-medium">{data.test}</span></p>
+      <p className="mt-4 text-xl"> Counting visits:  <span className="font-medium">{data.visits}</span></p>
     </div>
   </>)
 }
