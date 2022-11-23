@@ -19,15 +19,12 @@ async function RedisExample(props) {
         Proofs of Redis working &rarr;
       </h3>
       <p className="mt-4 text-xl">
-        {" "}
         Ping! <span className="font-medium">{data.ping}</span>
       </p>
       <p className="mt-4 text-xl">
-        {" "}
         Hi! <span className="font-medium">{data.test}</span>
       </p>
       <p className="mt-4 text-xl">
-        {" "}
         Counting visits: <span className="font-medium">{data.visits}</span>
       </p>
     </div>

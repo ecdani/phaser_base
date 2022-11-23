@@ -9,7 +9,7 @@ function gameReducer(state, action) {
     case "set":
       return action.payload;
     case "destroy":
-      state.destroy(true, true);
+      state.destroy(true);
       break;
     default:
       throw new Error();
