@@ -17,11 +17,6 @@ You need to have installed **Git**, **Docker** and **Docker Compose**:
 
 Now you can **clone** this repository.
 
-After the cloning, using a console, in the root of your local copy of the repository run:
-```
-docker compose run node npm install
-```
-
 # How to run it
 
 Using a console, in the root of your local copy of the repository run:

@@ -3,7 +3,9 @@ name: phaser_base
 
 services:
   node:
-    image: node:18-alpine
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
     container_name: ${COMPOSE_PROJECT_NAME}-node
     user: node
     working_dir: /app
@@ -13,10 +15,10 @@ services:
         target: /app
     environment:
       NODE_ENV: development
+      REDIS_URL: redis://redis:6379
     ports:
       - 3000:3000
       - 9229:9229
-    command: "npm run dev"
   redis:
     image: redis:7-alpine
     container_name: ${COMPOSE_PROJECT_NAME}-redis
