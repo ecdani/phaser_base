@@ -1,7 +1,8 @@
-import Game from "../components/game.js";
+import React from "react";
+import Head from "next/head";
+import Image from "next/image";
+import Game from "../components/game";
 import RedisExample from "../components/redisExample";
-import Head from 'next/head'
-import Image from 'next/image'
 
 export default async function Page() {
   const data = await RedisExample.getServerSideData();
@@ -14,14 +15,14 @@ export default async function Page() {
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
         <h1 className="text-6xl font-bold">
-          Welcome to{' '}
+          Welcome to{" "}
           <a className="text-blue-600" href="https://nextjs.org">
             Next.js!
           </a>
         </h1>
 
         <p className="mt-3 text-2xl">
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
             pages/index.tsx
           </code>
@@ -32,11 +33,15 @@ export default async function Page() {
         </div>
 
         <div className="my-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-
           <div className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600">
-            <h3 className="text-2xl font-bold">Proof of tailwind working &rarr;</h3>
+            <h3 className="text-2xl font-bold">
+              Proof of tailwind working &rarr;
+            </h3>
             <p className="mt-4 text-xl">
-              <code className={"rounded-md bg-gray-100 p-3 font-mono text-lg underline decoration-pink-500"}> Underlined pink text 💗</code>
+              <code className="rounded-md bg-gray-100 p-3 font-mono text-lg underline decoration-pink-500">
+                {" "}
+                Underlined pink text 💗
+              </code>
             </p>
           </div>
 
@@ -91,10 +96,10 @@ export default async function Page() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a>
       </footer>
     </div>
-    );
+  );
 }
