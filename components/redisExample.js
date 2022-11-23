@@ -1,6 +1,8 @@
 import { createClient } from 'redis';
 import Image from 'next/image'
 
+const { REDIS_URL } = process.env;
+
 async function RedisExample (props) {
   const data = props.data;
   return (<>
@@ -18,7 +20,8 @@ async function RedisExample (props) {
 
 RedisExample.getServerSideData = async () => {
   try {
-    const client = createClient({ url: 'redis://redis:6379' });
+    const client = createClient({ url: REDIS_URL });
+    
     client.on('error', (err) => {
       console.log('Error occured while connecting or accessing redis server');
     });
