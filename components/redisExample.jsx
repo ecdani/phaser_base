@@ -1,33 +1,39 @@
 import React from "react";
 import { createClient } from "redis";
 import Image from "next/image";
+import Card from "./Card";
 
 const { REDIS_URL } = process.env;
 
 async function RedisExample(props) {
   const { data } = props;
   return (
-    <div className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600">
-      <h3 className="text-2xl font-bold">
-        <Image
-          className="inline mr-3"
-          src="/redis-icon.svg"
-          alt="Redis Logo"
-          width={32}
-          height={32}
-        />
-        Proofs of Redis working &rarr;
-      </h3>
-      <p className="mt-4 text-xl">
-        Ping! <span className="font-medium">{data.ping}</span>
-      </p>
-      <p className="mt-4 text-xl">
-        Hi! <span className="font-medium">{data.test}</span>
-      </p>
-      <p className="mt-4 text-xl">
-        Counting visits: <span className="font-medium">{data.visits}</span>
-      </p>
-    </div>
+    <Card
+      title={
+        <>
+          <Image
+            className="inline mr-3"
+            src="/redis-icon.svg"
+            alt="Redis Logo"
+            width={32}
+            height={32}
+          />
+          Proofs of Redis working &rarr;
+        </>
+      }
+    >
+      <div className="text-xl flex flex-col gap-4">
+        <p>
+          Ping! <span className="font-medium">{data.ping}</span>
+        </p>
+        <p>
+          Hi! <span className="font-medium">{data.test}</span>
+        </p>
+        <p>
+          Counting visits: <span className="font-medium">{data.visits}</span>
+        </p>
+      </div>
+    </Card>
   );
 }
 
