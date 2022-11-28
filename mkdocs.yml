@@ -32,6 +32,7 @@ nav:
   - Home: index.md
   - Debugging: debugging.md
   - Linting: linting.md
+  - "About Redis": redis.md
 
 markdown_extensions:
   - admonition
