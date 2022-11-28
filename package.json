@@ -16,7 +16,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "playwright test --reporter=html"
   },
   "engines": {
       "node": "^18.12.1",
@@ -33,6 +34,7 @@
     "redis": "^4.5.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.28.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "autoprefixer": "^10.4.13",

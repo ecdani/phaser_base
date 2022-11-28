@@ -12,6 +12,10 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/prop-types": [1, { "ignore": ["children"] }]
+    "react/prop-types": [1, { "ignore": ["children"] }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["!**/*.spec.jsx?"] }
+    ]
   }
 }
