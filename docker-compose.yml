@@ -16,6 +16,7 @@ services:
     environment:
       NODE_ENV: development
       REDIS_URL: redis://redis:6379
+      NPM_CONFIG_engine-strict: true
     ports:
       - 3000:3000
       - 9229:9229
