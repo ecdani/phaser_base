@@ -21,7 +21,7 @@ Now you can **clone** this repository.
 
 Using a console, in the root of your local copy of the repository run:
 ```bash
-docker compose up -d 
+docker compose up -d
 ```
 You can visit http://localhost:3000/ to check that it's working.
 
@@ -39,3 +39,29 @@ This base comes with an self-contained documentation repository (mkdocs), where 
 Simply visit http://localhost:8000/ to see all the documentation.
 > ### Disclaimer
 > Ports may vary. Please check it with: `docker compose ps`
+
+# Testing e2e with Playwright <img src="https://playwright.bootcss.com/img/playwright-logo.svg" width="32"/>
+
+## Install
+
+```bash
+npx playwright install
+```
+
+## Run tests
+
+Playwright is configured to show report as `html`.
+
+```bash
+npm run test:e2e
+```
+
+## Show report
+
+Playwright open automatically the web browser if some of the tests are failed.
+
+```bash
+npx playwright show-report
+```
+
+By default the report is served at http://localhost:9323 in your local machine.
