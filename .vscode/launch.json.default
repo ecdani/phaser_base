@@ -7,6 +7,12 @@
       "name": "Server debug",
       "remoteRoot": "${workspaceFolder}",
       "localRoot": "${workspaceFolder}"
-  }
+    },
+    {
+      "name": "Client debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    }
   ]
 }
