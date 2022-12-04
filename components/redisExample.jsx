@@ -1,9 +1,7 @@
 import React from "react";
-import { createClient } from "redis";
 import Image from "next/image";
+import redisClient from "../services/redis";
 import Card from "./Card";
-
-const { REDIS_URL } = process.env;
 
 async function RedisExample(props) {
   const { data } = props;
@@ -39,27 +37,18 @@ async function RedisExample(props) {
 
 RedisExample.getServerSideData = async () => {
   try {
-    const client = createClient({ url: REDIS_URL });
+    const test = "Hello from redis!";
+    await redisClient.connect();
 
-    client.on("error", () => {
-      console.log("Error occured while connecting or accessing redis server");
-    });
+    const [ping, visits] = await Promise.all([
+      redisClient.ping(),
+      redisClient.incr("visits"),
+      redisClient.set("test", test),
+    ]);
 
-    await client.connect();
+    await redisClient.quit();
 
-    const ping = await client.ping();
-    await client.set("test", "Hello from redis!");
-    const testValue = await client.get("test");
-
-    let visits = 0;
-    if (await client.exists("visits")) {
-      visits = await client.get("visits");
-      await client.set("visits", parseInt(visits, 10) + 1);
-    } else {
-      client.set("visits", 0);
-    }
-    await client.quit();
-    return { ping, test: testValue, visits };
+    return { ping, test, visits };
   } catch (e) {
     console.error(e);
     return {};
