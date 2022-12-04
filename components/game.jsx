@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useEffect } from "react";
-import PhaserGame from "../game/main";
 
 const canvasContentId = "game-content";
 
 export default function Game() {
   useEffect(() => {
-    const phaserGame = new PhaserGame({ canvasContentId });
-
-    return () => phaserGame.destroy();
+    const load = async () => {
+      const { default: initGame } = await import("../game/main");
+      initGame(canvasContentId);
+    };
+    load();
   }, []);
 
   return <div id={canvasContentId} key="game-content" />;

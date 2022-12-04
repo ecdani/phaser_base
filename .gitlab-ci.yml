@@ -1,0 +1,32 @@
+default:
+  image: node:18-alpine
+
+before_script:
+  - npm ci
+
+cache:
+  paths:
+    - node_modules/
+
+deploy_preview:
+  stage: deploy
+  except:
+    - main
+  script:
+    - npm install --global vercel
+    - vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+    - vercel build --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt  --token=$VERCEL_TOKEN
+
+deploy_to_production:
+  stage: deploy
+  script:
+    - npm install vercel --global
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+  only:
+    - main
+  environment:
+    name: Production
+    url: https://phaser-base-flopivg.vercel.app

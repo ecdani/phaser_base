@@ -3,3 +3,4 @@ node_modules
 !.vscode/launch.json.default
 .next
 playwright-report
+.vercel
