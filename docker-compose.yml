@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 name: phaser_base
 
 services:
@@ -34,9 +34,9 @@ services:
     image: rediscommander/redis-commander:latest
     container_name: ${COMPOSE_PROJECT_NAME}-redis-commander
     environment:
-    - REDIS_HOSTS=local:redis:6379
+      - REDIS_HOSTS=local:redis:6379
     ports:
-    - 8081:8081
+      - 8081:8081
   mkdocs:
     image: squidfunk/mkdocs-material:latest
     container_name: ${COMPOSE_PROJECT_NAME}-mkdocs
@@ -44,5 +44,8 @@ services:
       - 8000-8010:8000
     volumes:
       - type: bind
-        source: .
-        target: /docs
+        source: ./docs
+        target: /docs/docs
+      - type: bind
+        source: ./docs/mkdocs.yml
+        target: /docs/mkdocs.yml

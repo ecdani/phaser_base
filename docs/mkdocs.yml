@@ -1,5 +1,5 @@
 site_name: Phaser base doc
-dev_addr: '127.0.0.1:8000'
+dev_addr: "127.0.0.1:8000"
 site_url: https://github.com/ecdani/phaser_base
 site_dir: docs/build
 
@@ -29,10 +29,11 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 nav:
-  - Home: index.md
-  - Debugging: debugging.md
-  - Linting: linting.md
-  - "About Redis": redis.md
+  - Home: ./index.md
+  - Standards: ./standards.md
+  - Debugging: ./debugging.md
+  - Linting: ./linting.md
+  - "About Redis": ./redis.md
 
 markdown_extensions:
   - admonition
