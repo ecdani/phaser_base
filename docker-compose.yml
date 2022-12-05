@@ -27,9 +27,9 @@ services:
     ports:
       - 6379:6379
     restart: unless-stopped
-    #volumes:
-    # - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-    # - ./redis/redis-data:/data
+    volumes:
+      - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./docker/redis/redis-data:/data
   redis-commander:
     image: rediscommander/redis-commander:latest
     container_name: ${COMPOSE_PROJECT_NAME}-redis-commander
@@ -44,8 +44,5 @@ services:
       - 8000-8010:8000
     volumes:
       - type: bind
-        source: ./docs
-        target: /docs/docs
-      - type: bind
-        source: ./docs/mkdocs.yml
-        target: /docs/mkdocs.yml
+        source: ./docker/mkdocs
+        target: /docs

@@ -30,7 +30,6 @@ theme:
         name: Switch to light mode
 nav:
   - Home: ./index.md
-  - Standards: ./standards.md
   - Debugging: ./debugging.md
   - Linting: ./linting.md
   - "About Redis": ./redis.md
