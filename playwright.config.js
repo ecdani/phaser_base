@@ -11,7 +11,7 @@ const config = {
   outputDir: "test-results/",
   webServer: {
     command: "npm run dev",
-    url: baseURL,
+    url: process.env.CI_ENVIRONMENT_URL || baseURL,
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
   },
