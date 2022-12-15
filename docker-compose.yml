@@ -46,3 +46,16 @@ services:
       - type: bind
         source: ./docker/mkdocs
         target: /docs
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.28.1
+    container_name: ${COMPOSE_PROJECT_NAME}-playwright
+    profiles:
+      - test
+    volumes:
+      - .:/tests
+    working_dir: /tests
+    user: pwuser
+    ports:
+      - 9323:9323
+    command: >
+      sh -c "npm run test:e2e && npx playwright show-report --host 0.0.0.0"
