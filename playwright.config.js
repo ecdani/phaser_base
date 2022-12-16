@@ -2,7 +2,8 @@ import { devices } from "@playwright/test";
 import path from "path";
 
 const PORT = process.env.PORT || 3000;
-const baseURL = `http://172.17.0.1:${PORT}`;
+const HOST = process.env.PLAYWRIGHT_HOST || "localhost";
+const baseURL = `http://${HOST}:${PORT}`;
 
 const config = {
   timeout: 30 * 1000,

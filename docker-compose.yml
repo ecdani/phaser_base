@@ -53,6 +53,8 @@ services:
       - test
     volumes:
       - .:/tests
+    environment:
+      PLAYWRIGHT_HOST: 172.17.0.1
     working_dir: /tests
     user: pwuser
     ports:
