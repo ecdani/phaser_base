@@ -6,7 +6,31 @@ There are debugging for server-side and for client-side code, which work indepen
 
 ## For VSCode
 
-You need to copy `launch.json.default` located in `.vscode` folder as `launch.json` in same folder.
+To be able to debugging add the following values inside of your **Workspace Settings (JSON)**:
+!!! warning
+
+    Don't copy and paste literally! Adapt it.
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Server debug",
+      "remoteRoot": "${workspaceFolder}",
+      "localRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Client debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    }
+  ]
+}
+```
 
 And for client-side debugging you need to have installed [Google Chrome browser](https://www.google.com/chrome/).
 

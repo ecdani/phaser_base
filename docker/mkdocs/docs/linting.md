@@ -2,7 +2,7 @@
 
 ## For VSCode
 
-To automatically format your document with the **eslint/prettier** configuration add the following values inside of your **User Settings (JSON)**.
+To automatically format your document with the **eslint/prettier** configuration add the following values inside of your **Workspace Settings (JSON)**.
 
 ```json
 "eslint.validate": ["javascript"],

@@ -1,6 +1,5 @@
 node_modules
-.vscode/*
-!.vscode/launch.json.default
+.vscode
 .next
 e2e/playwright-report
 .vercel
