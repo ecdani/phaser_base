@@ -1,5 +1,4 @@
 import { devices } from "@playwright/test";
-import path from "path";
 
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.PLAYWRIGHT_HOST || "localhost";
@@ -7,16 +6,16 @@ const baseURL = `http://${HOST}:${PORT}`;
 
 const config = {
   timeout: 30 * 1000,
-  testDir: path.join(__dirname, "e2e"),
+  testDir: __dirname,
   retries: 2,
   outputDir: "test-results/",
   reporter: [
     [
       "html",
       {
-        open: "never",
+        open: "always",
         host: "0.0.0.0",
-        port: 9223,
+        outputFolder: "playwright-report",
       },
     ],
   ],

@@ -17,7 +17,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:e2e": "playwright test --reporter=html"
+    "test:e2e": "playwright test --config=e2e/playwright.config.js"
   },
   "engines": {
     "node": "^18.12.1",

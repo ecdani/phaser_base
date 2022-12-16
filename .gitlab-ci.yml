@@ -22,7 +22,7 @@ test:e2e:
   stage: test
   image: mcr.microsoft.com/playwright:v1.28.1-focal
   script:
-    - npx playwright test
+    - npx playwright test --config=e2e/playwright.config.js
 
 deploy_preview:
   stage: deploy
